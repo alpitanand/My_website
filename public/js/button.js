@@ -39,3 +39,21 @@ $("#work").click(function() {
         }        
     });
   });
+$(function(){
+  $("#submit-button").submit(function(e){
+    e.preventDefault();
+    var formData = new FormData($(this)); 
+    $.ajax({
+        url: '/formfill',
+        type: 'POST',
+        data: formData,
+        async: true,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            console.log(response);
+        }
+     });
+  })  
+});
