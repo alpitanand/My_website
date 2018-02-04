@@ -1,7 +1,8 @@
 * {
     padding: 0px;
     margin: 0px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 html {
@@ -51,14 +52,19 @@ body {
     top: 0px;
     width: 100%;
     height: 7rem;
-    box-shadow: 5px 10px 18px #2b2929;
+    -webkit-box-shadow: 5px 10px 18px #2b2929;
+            box-shadow: 5px 10px 18px #2b2929;
     z-index: 10;
 }
 
 .navbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     list-style: none;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
     padding: 2rem 0px;
 }
 
@@ -79,6 +85,7 @@ body {
     width: 0;
     height: .25rem;
     background: rgb(255, 102, 0);
+    -webkit-transition: width .5s;
     transition: width .5s;
 }
 
@@ -90,8 +97,12 @@ body {
     top: 40%;
     left: 52%;
     position: absolute;
-    transform: translate(-50%, -50%);
-    user-select: none;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     color: rgb(70, 69, 69);
     font-weight: 400;
 }
@@ -101,8 +112,10 @@ body {
     text-transform: uppercase;
     font-size: 10rem;
     border-bottom: 2px;
-    animation-name: moveInleft;
-    animation-duration: 1s;
+    -webkit-animation-name: moveInleft;
+            animation-name: moveInleft;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
 }
 
 .under {
@@ -116,8 +129,10 @@ body {
     font-size: 10rem;
     text-transform: uppercase;
     letter-spacing: 3.7rem;
-    animation-name: moveInright;
-    animation-duration: 1s;
+    -webkit-animation-name: moveInright;
+            animation-name: moveInright;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
 }
 
 .heading-primary::first-letter {
@@ -128,31 +143,71 @@ body {
     color: rgb(12, 12, 190);
 }
 
-@keyframes moveInleft {
+@-webkit-keyframes moveInleft {
     0% {
         opacity: 0;
-        transform: translateX(-10rem)
+        -webkit-transform: translateX(-10rem);
+                transform: translateX(-10rem)
     }
     80% {
-        transform: translateX(1rem);
+        -webkit-transform: translateX(1rem);
+                transform: translateX(1rem);
     }
     100% {
         opacity: 1;
-        transform: translate(0);
+        -webkit-transform: translate(0);
+                transform: translate(0);
+    }
+}
+
+@keyframes moveInleft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-10rem);
+                transform: translateX(-10rem)
+    }
+    80% {
+        -webkit-transform: translateX(1rem);
+                transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+                transform: translate(0);
+    }
+}
+
+@-webkit-keyframes moveInright {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(10rem);
+                transform: translateX(10rem)
+    }
+    80% {
+        -webkit-transform: translateX(-1rem);
+                transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translate(0);
+                transform: translate(0);
     }
 }
 
 @keyframes moveInright {
     0% {
         opacity: 0;
-        transform: translateX(10rem)
+        -webkit-transform: translateX(10rem);
+                transform: translateX(10rem)
     }
     80% {
-        transform: translateX(-1rem);
+        -webkit-transform: translateX(-1rem);
+                transform: translateX(-1rem);
     }
     100% {
         opacity: 1;
-        transform: translate(0);
+        -webkit-transform: translate(0);
+                transform: translate(0);
     }
 }
 
@@ -166,15 +221,23 @@ body {
     background-size: cover;
     width: auto;
     background-color: #2c3e50;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
     font-family: 'Lato';
 }
 
 .profile {
     height: 25rem;
-    flex: 0 0 25rem;
-    transform: translate(40%, -40%);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25rem;
+            flex: 0 0 25rem;
+    -webkit-transform: translate(40%, -40%);
+            transform: translate(40%, -40%);
     border: 2px solid black;
     padding: 2rem;
 }
@@ -230,7 +293,9 @@ blockquote cite:before {
     font-weight: 300;
     padding-right: 2rem;
     margin-top: -3rem;
-    align-items: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     width: 50rem;
 }
 
@@ -245,6 +310,8 @@ h1 {
 }
 
 .des {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 
@@ -254,9 +321,16 @@ h1 {
 }
 
 .know {
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between
 }
 
 .d1,
@@ -286,7 +360,8 @@ h1 {
 .d8:hover,
 .d9:hover,
 .d10:hover{
-    box-shadow: 0 5px rgb(248, 243, 243);
+    -webkit-box-shadow: 0 5px rgb(248, 243, 243);
+            box-shadow: 0 5px rgb(248, 243, 243);
     /* background-size: 80% 100%;  */
 }
 
@@ -298,9 +373,23 @@ h1 {
  
 }
 .s1{
+    background-image: -webkit-gradient(linear, left top, right top, from(#e74c3c), to(#e74c3c));
     background-image: linear-gradient(to right, #e74c3c, #e74c3c);
-    animation: d1s1 2s ease-out;
+    -webkit-animation: d1s1 2s ease-out;
+            animation: d1s1 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d1s1{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 90% 100%;
+   }
+    100%{
+        background-size: 80% 100%;
+    }
 }
 @keyframes d1s1{
     0%{
@@ -321,9 +410,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s2{
+    background-image: -webkit-gradient(linear, left top, right top, from(#2ecc71) ,  to(#2ecc71) );
     background-image: linear-gradient(to right, #2ecc71 ,  #2ecc71 );
-    animation: d2s2 2s ease-out;
+    -webkit-animation: d2s2 2s ease-out;
+            animation: d2s2 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d2s2{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 80% 100%;
+   }
+    100%{
+        background-size: 70% 100%;
+    }
 }
 @keyframes d2s2{
     0%{
@@ -345,9 +448,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s3{
+    background-image: -webkit-gradient(linear,  left top, right top,  from(#1abc9c) , to(#1abc9c)  );
     background-image: linear-gradient(to right,  #1abc9c , #1abc9c  );
-    animation: d3s3 2s ease-out;
+    -webkit-animation: d3s3 2s ease-out;
+            animation: d3s3 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d3s3{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 95% 100%;
+   }
+    100%{
+        background-size: 85% 100%;
+    }
 }
 @keyframes d3s3{
     0%{
@@ -369,9 +486,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s4{
+    background-image: -webkit-gradient(linear, left top, right top, from(#3498db) , to(#3498db) );
     background-image: linear-gradient(to right, #3498db , #3498db );
-    animation: d4s4 2s ease-out;
+    -webkit-animation: d4s4 2s ease-out;
+            animation: d4s4 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d4s4{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 73% 100%;
+   }
+    100%{
+        background-size: 63% 100%;
+    }
 }
 @keyframes d4s4{
     0%{
@@ -392,9 +523,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s5{
+    background-image: -webkit-gradient(linear, left top, right top, from(#ecf0f1) , to(#ecf0f1) );
     background-image: linear-gradient(to right, #ecf0f1 , #ecf0f1 );
-    animation: d5s5 2s ease-out;
+    -webkit-animation: d5s5 2s ease-out;
+            animation: d5s5 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d5s5{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 60% 100%;
+   }
+    100%{
+        background-size: 50% 100%;
+    }
 }
 @keyframes d5s5{
     0%{
@@ -415,9 +560,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s6{
+    background-image: -webkit-gradient(linear, left top, right top, from(#f1c40f) , to(#f1c40f) );
     background-image: linear-gradient(to right, #f1c40f , #f1c40f );
-    animation: d6s6 2s ease-out;
+    -webkit-animation: d6s6 2s ease-out;
+            animation: d6s6 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d6s6{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 65% 100%;
+   }
+    100%{
+        background-size: 55% 100%;
+    }
 }
 @keyframes d6s6{
     0%{
@@ -438,9 +597,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s7{
+    background-image: -webkit-gradient(linear, left top, right top, from(#8e44ad), to(#8e44ad));
     background-image: linear-gradient(to right, #8e44ad, #8e44ad);
-    animation: d7s7 2s ease-out;
+    -webkit-animation: d7s7 2s ease-out;
+            animation: d7s7 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d7s7{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 75% 100%;
+   }
+    100%{
+        background-size: 65% 100%;
+    }
 }
 @keyframes d7s7{
     0%{
@@ -462,9 +635,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s8{
+    background-image: -webkit-gradient(linear, left top, right top, from(#e74c3c), to(#e74c3c));
     background-image: linear-gradient(to right, #e74c3c, #e74c3c);
-    animation: d8s8 2s ease-out;
+    -webkit-animation: d8s8 2s ease-out;
+            animation: d8s8 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d8s8{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 95% 100%;
+   }
+    100%{
+        background-size: 85% 100%;
+    }
 }
 @keyframes d8s8{
     0%{
@@ -484,9 +671,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s9{
+    background-image: -webkit-gradient(linear, left top, right top, from(#f39c12), to(#f39c12));
     background-image: linear-gradient(to right, #f39c12, #f39c12);
-    animation: d9s9 2s ease-out;
+    -webkit-animation: d9s9 2s ease-out;
+            animation: d9s9 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d9s9{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 65% 100%;
+   }
+    100%{
+        background-size: 55% 100%;
+    }
 }
 @keyframes d9s9{
     0%{
@@ -507,9 +708,23 @@ h1 {
     background-repeat: no-repeat;
 }
 .s10{
+    background-image: -webkit-gradient(linear, left top, right top, from(#29b108), to(#29b108));
     background-image: linear-gradient(to right, #29b108, #29b108);
-    animation: d10s10 2s ease-out;
+    -webkit-animation: d10s10 2s ease-out;
+            animation: d10s10 2s ease-out;
+    -webkit-transition: .5s;
     transition: .5s;
+}
+@-webkit-keyframes d10s10{
+    0%{
+        background-size: 0% 100%;
+    }
+   80%{
+    background-size: 70% 100%;
+   }
+    100%{
+        background-size: 60% 100%;
+    }
 }
 @keyframes d10s10{
     0%{
@@ -551,10 +766,17 @@ h1 {
 
 .myworks{
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-   flex-direction: column;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+       -ms-flex-direction: column;
+           flex-direction: column;
     padding:10rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     
    
 }
@@ -586,13 +808,19 @@ a.button{
     text-align: center;
     padding: 2rem 5rem;
     border-radius: 1rem;
-    box-shadow: 0 5px 5px 2px rgb(58, 57, 57);
+    -webkit-box-shadow: 0 5px 5px 2px rgb(58, 57, 57);
+            box-shadow: 0 5px 5px 2px rgb(58, 57, 57);
 }
 #chatapp,#app1,#app2,#game,#zerodha{
     background-color: #e74c3c;  
     border: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 #chat-app-button{
     background-color: #f7f0f0;
@@ -606,9 +834,16 @@ a.button{
 }
 
 .wrapper{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 #app1{
@@ -631,10 +866,18 @@ a.button{
 .contactme{
     background-color: #131212ea;
     height: 40vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     
     
 }
@@ -656,7 +899,10 @@ a.button{
     width: 30rem;
 }
 .contact-me-text{
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 input { 
