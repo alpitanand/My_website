@@ -40,20 +40,21 @@ $("#work").click(function() {
     });
   });
 $(function(){
-  $("#submit-button").submit(function(e){
-    e.preventDefault();
-    var formData = new FormData($(this)); 
-    $.ajax({
-        url: '/formfill',
-        type: 'POST',
-        data: formData,
-        async: true,
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function (response) {
-            console.log(response);
-        }
-     });
-  })  
+    $("#submit-button").closest("form").submit(function(e){
+      console.log("Älpit");
+      e.preventDefault();
+    // var formData = new FormData($(this));
+    // console.log(formData); 
+   
+$.ajax({
+    url: '/formfill',
+    type: 'POST',
+    data: $(this).serialize(),
+    success: function (response) {
+        console.log(response);
+    }
+ });
+ $('#form-id').children('input').val('');
+  }) 
+
 });

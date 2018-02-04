@@ -695,4 +695,23 @@ input {
       color: #ffffffcc
   }
 
-  
+  /* +++++++++++++++++++++++++++++ Responsive design +++++++++++++++++++++++++++++++++ */
+  @media only screen and (max-width: 500px) {
+ body{
+     width: 100%;
+     
+ }
+    .navbar{
+        display: none;
+    }
+.heading-primary{
+    font-size: 35px;
+    margin-left: 8%;
+}
+.heading-sub{
+    font-size: 35px;
+    margin-top: -2px;
+    letter-spacing: 22px;
+}
+   
+}
